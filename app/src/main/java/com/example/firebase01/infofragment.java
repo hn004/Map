@@ -4,10 +4,13 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+
+import com.bumptech.glide.Glide;
 
 
 public class infofragment extends Fragment {
@@ -18,24 +21,23 @@ public class infofragment extends Fragment {
 
     private String mParam1;
     private String mParam2;
-    String title, aa , ab, ac;
+    String name,  course,  email,  purl;
 
     public infofragment() {
 
     }
 
-    public infofragment(String title, String aa, String ab, String ac) {
-        this.title=title;
-        this.aa = aa;
-        this.ab = ab;
-        this.ac = ac;
+    public infofragment(String name, String course, String email, String purl) {
+        this.name=name;
+        this.course=course;
+        this.email=email;
+        this.purl=purl;
 
     }
 
 
-
-    public static infofragment newInstance(String param1, String param2) {
-        infofragment fragment = new infofragment();
+    public static dscfragment newInstance(String param1, String param2) {
+        dscfragment fragment = new dscfragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -56,23 +58,23 @@ public class infofragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.fragment_infofragment, container, false);
-        TextView titleholder=view.findViewById(R.id.titleholder);
-        TextView aaholder = view.findViewById(R.id.aaholder);
-        TextView abholder = view.findViewById(R.id.abholder);
-        TextView acholder = view.findViewById(R.id.acholder);
+        View view = inflater.inflate(R.layout.fragment_dscfragment, container, false);
+        ImageView imageholder=view.findViewById(R.id.imageholder);
+        TextView nameholder=view.findViewById(R.id.nameholder);
+        TextView courseholder=view.findViewById(R.id.courseholder);
+        TextView emailholder=view.findViewById(R.id.emailholder);
 
-        titleholder.setText(title);
-        aaholder.setText(aa);
-        abholder.setText(ab);
-        acholder.setText(ac);
+        nameholder.setText(name);
+        courseholder.setText(course);
+        emailholder.setText(email);
+        Glide.with(getContext()).load(purl).into(imageholder);
 
         return view;
     }
     public void onBackPressed(){
 
         AppCompatActivity activity = (AppCompatActivity)getContext();
-        activity.getSupportFragmentManager().beginTransaction().replace(R.id.wrapper,new dscfragment()).addToBackStack(null).commit();
+        activity.getSupportFragmentManager().beginTransaction().replace(R.id.wrapper,new recfragment()).addToBackStack(null).commit();
 
 
     }
