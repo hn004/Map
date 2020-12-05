@@ -16,7 +16,7 @@
 
     <!-- Dark Buttons -->
     <style name="ThemeOverlay.MyDarkButton" parent="ThemeOverlay.AppCompat.Dark">
-        <item name="colorButtonNormal">@color/grey_500</item>
+        <item name="colorButtonNormal">@color/colorButtonNormal</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:layout_marginRight">4dp</item>
         <item name="android:layout_marginLeft">4dp</item>
@@ -46,5 +46,10 @@
         <item name="android:gravity">center</item>
         <item name="android:textSize">36sp</item>
     </style>
+<!--     splashscreen-->
+    <style name="SplashScreen" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@drawable/background_splashscreen</item>
+    </style>
 
+    <color name="colorButtonNormal">color</color>
 </resources>
