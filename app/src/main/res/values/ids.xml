@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="nameholder" type="id">nameholder</item>
+    <item name="imageholder" type="id">imageholder</item>
+    <item name="courseholder" type="id">courseholder</item>
+    <item name="emailholder" type="id">emailholder</item>
+</resources>

@@ -24,7 +24,7 @@ public class dscfragment extends Fragment {
     RecyclerView recview2;
     myadapter2 adapter2;
 
-    public dscfragment(String name, String course, String email, String purl) {
+    public dscfragment() {
 
     }
 
